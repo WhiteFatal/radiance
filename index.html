@@ -65,12 +65,14 @@
       height: min(600px, 90vw);
       border-radius: 50%;
       background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 65%);
-      animation: pulse 5s ease-in-out infinite;
+      animation: pulse 20s ease-in-out infinite;
       pointer-events: none;
+      border: 1px solid rgba(201,168,76,0.12);
+      box-shadow: 0 0 190px rgba(201,168,76,0.6), inset 0 0 60px rgba(201,168,76,0.6); 
     }
     @keyframes pulse {
       0%, 100% { transform: scale(1); opacity: 0.6; }
-      50%       { transform: scale(1.08); opacity: 1; }
+      50%      { transform: scale(1.08); opacity: 1; }
     }
 
     /* ── Logo mark ── */
@@ -166,7 +168,19 @@
       color: rgba(245,237,224,0.75);
       white-space: nowrap;
     }
-
+    
+    /* ── Logo rotation ── */
+    img {
+      animation: rotate 40s linear infinite;
+    }
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
     /* ── Shared fade-up ── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(18px); }
@@ -193,22 +207,10 @@
   <div class="cursor-glow" id="cursorGlow"></div>
 
   <div class="scene">
-    <div class="glow-ring"></div>
+    <div class="glow-ring">*</div>
 
     <!-- SVG logo mark: stylised R / sun rays -->
-    <svg class="logo-mark" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="26" cy="26" r="25" stroke="#c9a84c" stroke-width="0.8" opacity="0.4"/>
-      <circle cx="26" cy="26" r="4" fill="#c9a84c" opacity="0.9"/>
-      <!-- rays -->
-      <line x1="26" y1="4"  x2="26" y2="13" stroke="#c9a84c" stroke-width="1" opacity="0.7"/>
-      <line x1="26" y1="39" x2="26" y2="48" stroke="#c9a84c" stroke-width="1" opacity="0.7"/>
-      <line x1="4"  y1="26" x2="13" y2="26" stroke="#c9a84c" stroke-width="1" opacity="0.7"/>
-      <line x1="39" y1="26" x2="48" y2="26" stroke="#c9a84c" stroke-width="1" opacity="0.7"/>
-      <line x1="9.5"  y1="9.5"  x2="15.9" y2="15.9" stroke="#c9a84c" stroke-width="1" opacity="0.45"/>
-      <line x1="36.1" y1="36.1" x2="42.5" y2="42.5" stroke="#c9a84c" stroke-width="1" opacity="0.45"/>
-      <line x1="42.5" y1="9.5"  x2="36.1" y2="15.9" stroke="#c9a84c" stroke-width="1" opacity="0.45"/>
-      <line x1="15.9" y1="36.1" x2="9.5"  y2="42.5" stroke="#c9a84c" stroke-width="1" opacity="0.45"/>
-    </svg>
+    <img src="ragiance_logo1.svg" width="60" />
 
     <p class="studio-label">Radiance Web Studio</p>
 
